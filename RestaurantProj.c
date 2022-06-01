@@ -17,13 +17,12 @@ void menu( );
 void adminsection();
 void Payment();
 void insertToOrder(char*prod , int quant, float p);
-void removeFromMenu();
 void foodtable( );
 void viewOrder();
 void insertnew(char* prod, float value );
 
 
-void insertnew(char* prod, float value ){ //Inserir novos produtos no em foodtable(cardápio). (Produtos iniciais)?
+void insertnew(char* prod, float value ){
 
     NODE * newProduct = (NODE*)malloc(sizeof(NODE));
 
@@ -34,7 +33,7 @@ void insertnew(char* prod, float value ){ //Inserir novos produtos no em foodtab
 
 }
 
-void foodtable( ){      //Mostrar cardápio , e escolher os produtos disponiveis;
+void foodtable( ){
 
       NODE*temp = (NODE*)malloc(sizeof(NODE));
       temp = heada;
@@ -47,7 +46,7 @@ void foodtable( ){      //Mostrar cardápio , e escolher os produtos disponiveis;
        char choice[100];
        int q;
        float p;
-        printf("\n\t\tPlease, insert the name of the product,the quantity , and the price:  \n");  //Forma de escolher os produtos que foram mostratados
+        printf("\n\t\tPlease, insert the name of the product,the quantity , and the price:  \n");
             scanf("%s%d%f", choice, &q, &p);
 
              printf("Thank you\n");
@@ -65,15 +64,8 @@ void foodtable( ){      //Mostrar cardápio , e escolher os produtos disponiveis;
                      }
           }
 
-void removeFromMenu() {
 
-printf("Nothing here");
-}
-
-/*void removeFromOrder(){    REMOVER PRODUTO DO PEDIDO.
- }*/
-
-void insertToOrder(char*prod , int quant, float p){        //INSERE EM HEADB . POIS HEADB MOSTRA O MENU.
+void insertToOrder(char*prod , int quant, float p){
   NODE*table = (NODE*)malloc(sizeof(NODE));
    table->product = prod;
    table->quantity = quant;
@@ -91,7 +83,7 @@ void Payment()
 
         if(card > 0) {
 
-             printf("Yours payment was approved, thank you");
+             printf("Your payment was approved, thank you");
         }
         else {
 
@@ -102,12 +94,12 @@ void Payment()
         }
 
 }
-void viewOrder(){   //
+void viewOrder(){
    NODE*newnode = (NODE*)malloc(sizeof(NODE));
     newnode = headb;
    float sum = 0;
      if(newnode == NULL){
-         printf("\t\tYou dont have a order yet!");   //COLOCAR TEMPO.
+         printf("\t\tYou dont have a order yet!");
         for (int c = 1; c <= 22767; c++)
             for (int d = 1; d <= 22767; d++)
             {}
@@ -135,12 +127,11 @@ void viewOrder(){   //
     }
   printf("\n");
 }
-void adminsection() {       //Inserir ou remover novos produtos do cardápio.
+void adminsection() {
        int password = 1234;
        int pass;
         int opt;
         char s[100];
-        int p;
         float q;
         printf("Please , insert the password : ");
           scanf("%d", &pass);
@@ -149,7 +140,7 @@ void adminsection() {       //Inserir ou remover novos produtos do cardápio.
                    //adminsection();
               }
              else if (pass == password){
-                    printf("\t\t 1.Insert a product: \n\t\t 2.Remove a product:  \n\t\t 3.Back to menu \n");
+                    printf("\t\t 1.Insert a product:  \n\t\t 2.Back to menu \n");
                              scanf("%d", &opt);
                              switch(opt){
 
@@ -160,9 +151,6 @@ void adminsection() {       //Inserir ou remover novos produtos do cardápio.
                                     menu();
                                 break;
                              case 2:
-                                 removeFromMenu();
-                                 break;
-                             case 3:
                                  menu();
                                  break;
                              }
@@ -209,7 +197,7 @@ int main( )  {
 
        for (int c = 1; c <= 22767; c++)
             for (int d = 1; d <= 22767; d++)
-            {} //MELHORAR ISSO
+            {}
 
         system("cls");
 
